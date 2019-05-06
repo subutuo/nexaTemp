@@ -86,6 +86,7 @@ public class UiAdapterSampleController {
     @RequestMapping(value = "/updateSampleDataWithMap.do")
 	public NexacroResult updateSampleDataWithMap(@ParamDataSet(name = "input1") List<Map<String,Object>> updateSampleList) {
     	
+    	System.out.println(updateSampleList);
     	nexacroSampleService.updateSampleDataWithMap(updateSampleList);
         NexacroResult result = new NexacroResult();
         return result;
@@ -128,34 +129,12 @@ public class UiAdapterSampleController {
     }
     
     @RequestMapping(value = "/test.do")
-    public NexacroResult test(
-            @ParamDataSet(name="dsUnit") List<UnitVO> unitList
-            , @ParamDataSet(name="dsUnit") List<Map> unitMapList
-            , @ParamDataSet(name="dsUnit") DataSet dsUnit
-            
-            , @ParamVariable(name="intValue") int iVar1
-            , @ParamVariable(name="intValue") Variable iVar2
-            , @ParamVariable(name="stringValue") String sVar1
-            , @ParamVariable(name="stringValue") Variable sVar2
-            
-            , DataSetList dsList
-            , VariableList varList
-            , PlatformData platformData
-            , HttpPlatformRequest platformRequest
-            , HttpPlatformResponse platformResponse
-            , NexacroFirstRowHandler firstRowHandler
-            ){
-        
-        if (log.isDebugEnabled()) {
-            log.debug("debug_message : nexacro supported parameter types..");
-        }
-        
-        // control nexacro result...
+	public NexacroResult test(@ParamDataSet(name = "input1") List<Map<String, Object>> list) {
+    	System.out.println(list);
+    	System.out.println(list.get(0));
+    	
+    //	nexacroSampleService.updateSampleDataWithVo(updateSampleList);
         NexacroResult result = new NexacroResult();
-        result.addDataSet("dsUnitList", unitList);
-        result.addVariable("responseInt", iVar1);
-        result.addVariable("responseString", sVar1);
-        
         return result;
     }
 }

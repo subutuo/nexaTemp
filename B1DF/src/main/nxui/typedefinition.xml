@@ -43,7 +43,7 @@
     <Service prefixid="extPrototype" type="js" cachelevel="session" url="./nexacro17lib/component/extPrototype/" version="0" communicationversion="0"/>
     <Service prefixid="lib" type="js" cachelevel="session" url="./lib/" version="0" communicationversion="0"/>
     <Service prefixid="frame" type="form" url="./frame/" cachelevel="session" version="0" communicationversion="0"/>
-    <Service prefixid="svcurl" type="JSP" cachelevel="none" url="http://localhost:8020/" version="0" communicationversion="0"/>
+    <Service prefixid="svcurl" type="JSP" cachelevel="none" url="http://localhost:8019/" version="0" communicationversion="0"/>
     <Service prefixid="pattern" type="form" cachelevel="session" url="./pattern/" version="0" communicationversion="0"/>
     <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/" cachelevel="session"/>
     <Service prefixid="cmm" type="form" cachelevel="session" url="./cmm/" version="0" communicationversion="0"/>

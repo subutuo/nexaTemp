@@ -4,6 +4,6 @@
   <TypeDefinition url="typedefinition.xml"/>
   <AppVariables url="appvariables.xml"/>
   <AppInfos>
-    <AppInfo url="packageB.xadl"/>
+    <AppInfo url="B1DF.xadl"/>
   </AppInfos>
 </Project>
