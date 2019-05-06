@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.03"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\B1DF\workspace\B1DF\src\main\nxui\packageB\" generated="C:\B1DF\workspace\B1DF\src\main\webapp\packageB\"><File url="environment.xml" checksum="20190505124346" errormsg=""/><File url="typedefinition.xml" checksum="20190506022200" errormsg=""/><File url="appvariables.xml" checksum="20190505124346" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20190505124354" errormsg=""/><File url="frame\frameLogin.xfdl" checksum="20190506023927" errormsg=""/><File url="packageB.xadl" checksum="20190505124353" errormsg=""/><File url="lib\cmmInclude.xjs" checksum="20190505124346" errormsg=""/><File url="frame\frameBottom.xfdl" checksum="20190505124346" errormsg=""/><File url="frame\frameLeft.xfdl" checksum="20190505124346" errormsg=""/><File url="frame\frameMain.xfdl" checksum="20190506022545" errormsg=""/><File url="frame\frameMDI.xfdl" checksum="20190505124346" errormsg=""/><File url="frame\frameTop.xfdl" checksum="20190505124346" errormsg=""/><File url="frame\frameWork.xfdl" checksum="20190505124346" errormsg=""/><File url="frame\frameWorkTitle.xfdl" checksum="20190505124346" errormsg=""/><File url="pattern\pattern01-transaction.xfdl" checksum="20190505124353" errormsg=""/><File url="pattern\pattern02-excel.xfdl" checksum="20190505124353" errormsg=""/><File url="pattern\pattern03-file.xfdl" checksum="20190505124353" errormsg=""/><File url="pattern\pattern04-largeData.xfdl" checksum="20190505124353" errormsg=""/><File url="cmm\cmmAlert.xfdl" checksum="20190505124346" errormsg=""/><File url="cmm\cmmConfirm.xfdl" checksum="20190505124346" errormsg=""/></Info>
+  </GenInfo>
+</root>
