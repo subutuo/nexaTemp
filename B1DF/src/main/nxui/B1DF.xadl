@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ADL version="2.0">
-  <Application id="packageB" screenid="Screen_D" onload="Application_onload" onerror="Application_onerror" version="17.0.0.101">
+  <Application id="B1DF" screenid="Screen_D" onload="Application_onload" onerror="Application_onerror" version="17.0.0.101">
     <Layout>
-      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="984" titletext="nexacro17MDI" showtitleicon="false" showcascadetitletext="false">
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="984" titletext="nexacro17" showtitleicon="false" showcascadetitletext="false">
         <VFrameSet id="VFrameSet" separatesize="44,0,*,0" showcascadetitletext="true">
           <Frames>
             <ChildFrame id="frameTop" showtitlebar="false" showstatusbar="false" formurl="frame::frameTop.xfdl" showtitleicon="false" dragmovetype="none"/>
@@ -90,11 +90,11 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 
 	// Frame 변수 저장
 	this.gvVFrameSet	= objApp.mainframe.VFrameSet;                                			//VFrameSet	
+	this.gvTopFrame     = objApp.mainframe.VFrameSet.frameTop;  								//TopFrame
 	this.gvLoginFrame	= objApp.mainframe.VFrameSet.frameLogin; 				   				//LoginFrame
 	this.gvHFrame       = objApp.mainframe.VFrameSet.HFrameSet;                      			//HFrame
 	this.gvLeftFrame    = objApp.mainframe.VFrameSet.HFrameSet.frameLeft;            			//leftFrame
 	this.gvVFrameSet1   = objApp.mainframe.VFrameSet.HFrameSet.VFrameSet1;           			//VFrameSet1
-	this.gvTopFrame     = objApp.mainframe.VFrameSet.frameTop;  								//TopFrame
 	this.gvWorkFrame    = objApp.mainframe.VFrameSet.HFrameSet.VFrameSet1.framesetWork;         //WorkForm
 	this.gvMainFrame    = objApp.mainframe.VFrameSet.HFrameSet.VFrameSet1.frameMain;  			//mainform
 	this.gvMdiFrame     = objApp.mainframe.VFrameSet.HFrameSet.VFrameSet1.frameNavi;  			//mdi frame
@@ -113,15 +113,14 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 	else {
 		var urlPath = window.location.protocol + "//" + window.location.host;
 		var objEnv = nexacro.getEnvironment();
-		
 		// service URL 설정
 		var objSrv = objEnv.services["svcurl"];
 		//objSrv.set_url(urlPath+"/nexacro/");
 
 		//로컬(웹)
-	    if (objSrv.url.indexOf("localhost") > -1 || objSrv.url.indexOf("127.0.0.1") > -1 ) {
+	    if (~objSrv.url.indexOf("localhost") || ~objSrv.url.indexOf("127.0.0.1")) {
 			nRunMode = "1";
-			objApp.mainframe.set_titletext("로컬(웹)  - " + objApp.mainframe.titletext);
+			objApp.mainframe.set_titletext("B1DF (로컬) - " + objApp.mainframe.titletext);
 		}
 		//운영
 		else {
@@ -143,14 +142,11 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 */
 this.afnSetTraceMode = function(bTrace)
 {
-	trace("★★ 운영접속시에는 trace 로그를 남기지 않도록 설정되었습니다.");
-	
     nexacro.setEnvironmentVariable("gvTraceMode", bTrace);
-    if (bTrace)
-    {
+	
+    if(bTrace) {
 		trace = this.gvRealTrace;
-    }
-    else {
+    } else {
         trace = function trace(){};
     }
 }
