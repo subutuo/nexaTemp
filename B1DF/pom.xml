@@ -182,14 +182,7 @@
             </exclusions>
         </dependency>
 
-        <!-- mysql이나 oracle 필요시 사용 -->        
-        <!--
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.31</version>
-        </dependency>
-        -->
+        <!-- oracle 사용 -->
         <dependency>
             <groupId>ojdbc</groupId>
             <artifactId>ojdbc</artifactId>
