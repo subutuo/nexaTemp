@@ -54,23 +54,26 @@
 	</select>
 
 	<select id="selectSampleList" parameterType="searchVO" resultType="egovMap">
-
-			SELECT
-				ID, NAME, DESCRIPTION, USE_YN, REG_USER
-			FROM SAMPLE
-			WHERE 1=1
-			<if test="searchKeyword != null and searchKeyword != ''">
-		        <choose>
-		            <when test="searchCondition == 0">
-						AND	ID LIKE '%' || #{searchKeyword} || '%'
-					</when>
-		            <when test="searchCondition == 1">
-						AND	NAME LIKE '%' || #{searchKeyword} || '%'
-					</when>
-				</choose>
-			</if>
-			ORDER BY ID ASC
-			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+		SELECT Z.*
+		  FROM (
+		         SELECT T.*
+		              , ROWNUM AS ROW_NUM
+		           FROM (
+		                  SELECT ID
+		                        ,NAME
+		                        ,DESCRIPTION
+		                        ,USE_YN
+		                        ,REG_USER
+		                    FROM SAMPLE
+		                   WHERE 1 = 1
+		                 ) T
+		          WHERE 1=1
+		            AND ROWNUM <![CDATA[<]]> 11
+		       ) Z
+		 WHERE 1=1
+		   AND Z.ROW_NUM <![CDATA[>=]]> 1
+		 ORDER BY Z.ID ASC
+		<!-- LIMIT #{recordCountPerPage} OFFSET #{firstIndex} -->
 	</select>
 
 	<select id="selectSampleListTotCnt" parameterType="searchVO" resultType="int">
